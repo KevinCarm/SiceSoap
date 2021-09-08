@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.32'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.google.code.ksoap2-android:ksoap2-android:3.6.2'
+}
+
+test {
+    useJUnitPlatform()
+}
